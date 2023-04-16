@@ -1,0 +1,199 @@
+  <html>
+  <head>
+  <title>Login Page</title>
+  <style>
+       body
+    {
+	    margin:0px;
+	    background-color:#cccccc;
+	    background-image:url(login1.jpg);
+            background-size: cover;
+	    color:#f9fcf5;
+	    font-family:Arial, Helvetica, sans-serif;
+    }
+
+    #main{width:600px; height:auto; overflow:hidden; padding-bottom:20px; margin-left:auto; margin-right:auto;
+    border-radius:5px; padding-left:10px; margin-top:100px; border-top:3px double #f1f1f1;
+    border-bottom:3px double #f1f1f1; padding-top:20px;
+    }
+
+    #main table{font-family:"Comic Sans MS", cursive;}
+    #main .tb{height:28px; width:230px; border:1px solid #f26724; color:#fd7838; font-weight:bold; border-left:5px solid #f7f7f7; opacity:0.9;}
+
+    #main .tb:focus{height:28px; border:1px solid #f26724; outline:none; border-left:5px solid #f7f7f7;}
+
+    #main .btn{width:150px; height:32px; outline:none;  color:#f7f7f7; font-weight:bold; border:0px solid #f26724;
+    text-shadow: 0px 0.5px 0.5px #fff; border-radius: 2px; font-weight: 600; color: #f26724; letter-spacing: 1px;
+    font-size:14px; background-color:#f1f1f1; -webkit-transition: 1s; -moz-transition: 1s; transition: 1s;}
+
+    #main .btn:hover{background-color:#f26724; outline:none;  border-radius: 2px; color:#f1f1f1; border:1px solid #f1f1f1;
+    -webkit-transition: 1s; -moz-transition: 1s; transition: 1s; }
+  </style>
+      <script>
+          function registration()
+	{
+
+		var email= document.forms["myForm"]["email"].value;
+
+		var password= document.forms["myForm"]["password"].value;;
+
+
+
+		var password_expression = /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-])/;
+
+
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+
+		if(email==='')
+		{
+			alert('Please enter your Email ID');
+                          document.myForm.email.focus();
+                        return false;
+		}
+		else if (!filter.test(email))
+		{
+			alert('Invalid Email ID');
+                          document.myForm.email.focus();
+                        return false;
+		}
+
+		else if(password==='')
+		{
+			alert('Please enter Password');
+                        document.myForm.password.focus();
+                        return false;
+
+		}
+                else if(!password_expression.test(password))
+		{
+			alert ('Input only allowed characters in Password');
+                        document.myForm.password.focus();
+                        return false;
+		}
+
+		else
+		{
+                            return true;
+	        }
+            }
+	function clearFunc()
+	{
+
+		document.getElementById("t2").value="";
+		document.getElementById("t4").value="";
+
+	}
+
+        </script>
+  </head>
+
+	<body>
+            <form action='signin.jsp' name="myForm" onsubmit="return registration()" method='POST'>
+	<div id="main">
+	<div class="h-tag">
+            <pre><h2>   Account Login</h2></pre>
+	</div>
+
+	<!-- create account div -->
+	<div class="login">
+	<table cellspacing="2" align="center" cellpadding="8" border="0">
+	<tr>
+	<td align="right">Wallet Username:</td>
+	<td><input type="text" placeholder="Enter Wallet Username here" id="t2" class="tb" name='username' /></td>
+	</tr>
+	<tr>
+	<td align="right">Private Key:</td>
+	<td><input type="password" placeholder="Enter Private Key here" id="t4" class="tb" name='privatekey'/></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td>
+	<input type="reset" value="Clear Form" onclick="clearFunc()" id="res" class="btn" />
+	<input type="submit" value="Submit" class="btn"/></td>
+	</tr>
+	</table>
+	</div>
+        </div>
+            </form>
+            </body>
+	</html>
+[12:00, 16/04/2023] Jagrath Chengappa Dsu: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: 20 px auto;
+            max-width: 500px;
+            padding:0px;
+            box-shadow: 2px 5px 10px black;
+            background-image:url(login1.jpg);
+            color:white;
+        }
+        body{
+            text-align: center;
+            background-image:url(rain.jpg);
+            color:white;
+        }
+        .images{
+            padding:5px;
+            border:2px solid black;
+            background-color: white;
+        }
+        .btn{width:150px; height:32px; outline:none;  color:#f7f7f7; font-weight:bold; border:0px solid #f26724;
+    text-shadow: 0px 0.5px 0.5px #fff; border-radius: 2px; font-weight: 600; color: #f26724; letter-spacing: 1px;
+    font-size:14px; background-color:#f1f1f1; -webkit-transition: 1s; -moz-transition: 1s; transition: 1s;}
+
+        .btn:hover{background-color:#f26724; outline:none;  border-radius: 2px; color:#f1f1f1; border:1px solid #f1f1f1;
+    -webkit-transition: 1s; -moz-transition: 1s; transition: 1s; }
+
+    .btn{
+        height:400px;
+        width:400px;
+    }
+    .bttn{
+        height:80px;
+        width:80px;
+    }
+    </style>
+</head>
+<body>
+    <form action="auth.jsp">
+    <center>
+    <div class="container">
+
+        <table>
+        <tr>
+            <td><left>
+        <marquee behavior="scroll" ddirection="left">
+            <img src="fair.jpeg" width="80" height="80"></left>
+            </td>
+            <td>
+                <input type="button" value="Dashboard" class="bttn"/>
+            </td>
+        </tr>
+        </table>
+    </div>
+    <div>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Invest" class="btn"/>
+            </td>
+
+            <td>
+                <input type="button" value="Sell"  class="btn"/>
+            </td>
+    </tr>
+
+    </table>
+
+        </form>
+    </div>
+</center>
+</body>
+</html>
