@@ -34,6 +34,7 @@ while True:
     if (choice == 1):
         ViewAllContracts()
         df = pd.DataFrame(lst)
+        df.to_csv('local.csv')
         print(df)
     elif (choice == 2):
         num = int(input("Enter the contract Number "))
@@ -54,30 +55,3 @@ while True:
 
             signed_tx = web3.eth.account.sign_transaction(tx, key)
             tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
-## Dummy Ether Accounts with Ganache
-#accounts_dict = {'0x0334e662AD19863FfD9caB2296C68815f525aeE0': '0x1e8e3a5f6015c3f40d73e9b01bf55a5025fddbdb88e7fef6f925d5e4f5750c27',
-#                 '0x489851e9Be7Ac9e730d13630f511c299C75c0580': '0xd1ed76f7319f7cc97c433a5b9acb025c8edecd397a40d870dcbf7fb9eb88b597',
-#                 '0x5AE351b51Cd647F835Ba3399A65Db9f95d19E85C': '0xcf1211753756be7c466fe054df46bcb83be6ef099d256547ebc451788793e17e',
-#                 '0x4746EA1B4b9938a7a3A3bc5ed27c462932e4Fe37': '0x956d9cc55f66b7bce36c981e87b0f7a5b7fe16ebe1c763a8b042d9c0a8b82100',
-#                 '0x7531a388b432Def291EF3D37FE044e2C71De1dF0': '0x4886d18e1e30dcd342eb4d32bc0405caf53e78dbcf32b4927804d63e108a9731'}
-#
-#Buyer: int = int(input("Enter Buyer Account Number: "))
-#Seller: int = int(input("Enter the Seller Number: "))
-
-if Buyer != Seller:
-    acc1 = list(accounts_dict)[Buyer]
-    acc2 = list(accounts_dict)[Seller]
-    print(acc1, acc2)
-    key = accounts_dict[acc1]
-    nonce = web3.eth.get_transaction_count(acc1)
-
-    tx = {
-        'nonce': nonce,
-        'to': acc2,
-        'value': web3.to_wei(1, 'ether'),
-        'gas': 2000000,
-        'gasPrice': web3.to_wei('50', 'gwei')
-    }
-
-    signed_tx = web3.eth.account.sign_transaction(tx, key)
-    tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
