@@ -23,8 +23,7 @@ try:
             for words in lst:
                 if words.lower() in words_list:
                     print(words)
-                    count += 1;
+                    count += 1
         return count
-    check()
 except:
     print("WebScraping Failed :(")

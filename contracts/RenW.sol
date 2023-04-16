@@ -18,7 +18,6 @@ contract RenW2{
     uint256 User_Count;
     uint256 Weight;
     uint256 quantity;
-    uint256 Environment_Info;
 
     // Defining the User Attributes
     struct User {
@@ -85,8 +84,7 @@ contract RenW2{
     }
 
     function buyListing(uint256 _listingIndex) public {
-        require(listing[_listingIndex].PersonID != users[User_Count].UserID, "Cannot buy the same stock twice");
-
+        require(listing[_listingIndex].PersonID != users[User_Count].UserID, "Cannot be Purchased Twice");
         listing[_listingIndex].PersonID = users[User_Count].UserID;
         listing[_listingIndex].PersonName = users[User_Count].UserName;
         listing[_listingIndex].count += 1;
@@ -98,7 +96,6 @@ contract RenW2{
         users[User_Count].stocksOwned += stock[count-1].quantity;
 
         getWeight();
-        }
     }
 
     function getWeight() private{
