@@ -18,10 +18,11 @@ For instance, suppose you are establishing a small solar farm worth INR 30,000. 
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install python dependancies.
 
-
+```
 git clone git@github.com:sainishwanth/RenW-Blockchain.git
 cd RenW-Blockchain
 pip install -r requirements.txt
+```
 
 
 

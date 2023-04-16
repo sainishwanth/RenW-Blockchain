@@ -1,0 +1,8 @@
+# RenW --Blockchain requirements
+# Usage: pip install -r requirements.txt
+
+
+#**************** Base Requirements ****************
+web3>=6.2.0
+beautifulsoup4>=4.12.2
+streamlit>=1.20
